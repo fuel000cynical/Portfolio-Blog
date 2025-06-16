@@ -1,7 +1,7 @@
 baseURL = 'https://www.guptasoham.com/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
-copyright = "Nigalya Ponya ©"
+title = "Soham's place"
+copyright = "Soham Gupta ©"
 
 [module]
   [module.hugoVersion]
