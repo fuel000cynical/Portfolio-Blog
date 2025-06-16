@@ -1,7 +1,6 @@
 baseURL = 'https://www.example.com/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
-theme = "hugo-digital-garden-theme-main"
 copyright = "Nigalya Ponya ©"
 
 [module]
