@@ -13,12 +13,12 @@ copyright = "Soham Gupta ©"
 
   [[params.social]]
     name = "Github"
-    link = "#"
+    link = "https://github.com/fuel000cynical"
     icon = "fab fa-github"
 
   [[params.social]]
     name = "LinkedIn"
-    link = "#"
+    link = "https://www.linkedin.com/in/soham-gupta-b567b2274/"
     icon = "fab fa-linkedin-in"
 
 

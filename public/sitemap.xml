@@ -15,7 +15,7 @@
     <lastmod>2021-08-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2021-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2021-08-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/</loc>
     <lastmod>2021-07-31T00:00:00+00:00</lastmod>
@@ -38,73 +38,15 @@
     <loc>http://localhost:1313/ai_blog/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ai_tags/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/art_tags/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/garden_tags/bamboo/</loc>
-    <lastmod>2021-08-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/ai_tags/cleaning/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/art_tags/cleaning/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/garden_tags/cleaning/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/law_tags/cleaning/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/garden_tags/food/</loc>
-    <lastmod>2021-08-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/ai_tags/fur/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/art_tags/fur/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/garden_tags/fur/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/law_tags/fur/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/garden_tags/</loc>
-    <lastmod>2021-08-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/law_tags/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/garden_tags/nap/</loc>
-    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/garden/seeding_example/</loc>
-    <lastmod>2021-08-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/ai_blog/evergreen_example/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/art/evergreen_example/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/garden/evergreen_example/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/law_blog/evergreen_example/</loc>
-    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/garden/growing_example/</loc>
-    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/garden_tags/trees/</loc>
-    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ai_tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/art_tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/garden_tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/law_tags/</loc>
   </url>
 </urlset>

@@ -7,21 +7,6 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
-    <lastBuildDate>Sun, 17 Mar 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/ai_tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Cleaning</title>
-      <link>http://localhost:1313/ai_tags/cleaning/</link>
-      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ai_tags/cleaning/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Fur</title>
-      <link>http://localhost:1313/ai_tags/fur/</link>
-      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ai_tags/fur/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>
