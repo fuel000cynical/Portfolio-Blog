@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{ $absURL }}css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ $absURL }}css/all.min.css">
     <link disabled id="dark-mode-theme" rel="stylesheet" href="{{ $absURL }}css/dark.css">
-    <link rel="stylesheet" type="text/css" href="{{ $absURL }}css/style.css">
+    <link rel="stylesheet" type="text/css" href='{{ "css/style.css" | absURL }}'>
     <link rel="stylesheet" type="text/css" href="{{ $absURL }}css/my_style.css">
     <!-- Site Title -->
     {{ $title := print .Site.Title " | " .Title }}
