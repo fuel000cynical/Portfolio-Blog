@@ -8,25 +8,13 @@ copyright = "Soham Gupta ©"
     min = "0.81.0"
 
 [params]
-  name = "Nigalya Ponya"
-  description = "Red panda living in the eastern Himalayas."
-  initials = "NP"
+  initials = "SG"
   googleAnalytics = ""
-
-  [[params.social]]
-    name = "Twitter"
-    link = "#"
-    icon = "fab fa-twitter"
 
   [[params.social]]
     name = "Github"
     link = "#"
     icon = "fab fa-github"
-
-  [[params.social]]
-    name = "Medium" 
-    link = "#"
-    icon = "fab fa-medium-m"
 
   [[params.social]]
     name = "LinkedIn"
@@ -44,19 +32,17 @@ copyright = "Soham Gupta ©"
     url = "/projects/"
     weight = 2
   [[menu.main]]
-    name = "Library"
-    url = "/library/"
-    weight = 3
-  [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 4
+    weight = 3
 
 
 [taxonomies]
   garden_tags = 'garden_tags'
+  ai_tags = 'ai_tags'
+  law_tags = 'law_tags'
+  art_tags = 'art_tags'
   project_tags = 'project_tags'
-  library_tags = 'library_tags'
 
 
 [markup]
