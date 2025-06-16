@@ -30,12 +30,5 @@
       <guid>http://localhost:1313/project_tags/how-to/</guid>
       <description></description>
     </item>
-    <item>
-      <title>Webapp</title>
-      <link>http://localhost:1313/project_tags/webapp/</link>
-      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/webapp/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>

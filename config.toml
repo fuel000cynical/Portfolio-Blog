@@ -24,17 +24,21 @@ copyright = "Soham Gupta ©"
 
 [menu]
   [[menu.main]]
-    name = "Digital Garden"
-    url = "/garden/"
+    name = "Synthetic Thinking"
+    url = "/ai_blog/"
     weight = 1
   [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
+    name = "Juriscript"
+    url = "/law_blog/"
     weight = 2
+  [[menu.main]]
+    name = "Tech Projects"
+    url = "/projects/"
+    weight = 3
   [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 3
+    weight = 4
 
 
 [taxonomies]
