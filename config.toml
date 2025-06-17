@@ -1,6 +1,6 @@
 baseURL = 'https://www.guptasoham.com/'
 languageCode = 'en-us'
-title = "Soham's place"
+title = "SG"
 copyright = "Soham Gupta ©"
 
 [module]
@@ -24,12 +24,12 @@ copyright = "Soham Gupta ©"
 
 [menu]
   [[menu.main]]
-    name = "Synthetic Thinking"
-    url = "/ai_blog/"
+    name = "NeuroMech"
+    url = "/neuromech/"
     weight = 1
   [[menu.main]]
     name = "Juriscript"
-    url = "/law_blog/"
+    url = "/juriscript/"
     weight = 2
   [[menu.main]]
     name = "Tech Projects"

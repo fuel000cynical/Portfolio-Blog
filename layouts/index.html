@@ -8,42 +8,44 @@
 <div class="mb-5 py-4">
     <div class="container">
         <h2 class="bio lh-base fs-1 serif">Passionate about the law, technology, and creative expression.</h2><a href="/about" role="button" class="btn btn-sm see-all">See more about me.</a>
+		{{ range .Site.Params.Social }}
+            <a class="footer-social px-2" {{ with .rel }} rel="{{ . }}" {{ end }} href="{{ .link }}" target="_blank"><i class="{{ .icon }}"></i></a>
+        {{ end }}
     </div>
 </div>
-
 <div class="container py-3">
 	<div class="row justify-content-between my-5">
 		<div class="col-lg-4">
-			{{ with .Site.GetPage "section" "ai_blog" }}
+			{{ with .Site.GetPage "section" "NeuroMech" }}
           	<div class="pb-4">
               	<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
           	</div>      
 			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
 			{{ end }}
 			<div class="row row-cols-1 g-4 mb-5">
-				{{ range ( where site.RegularPages "Section" "ai_blog" | first 3 ) }}
+				{{ range ( where site.RegularPages "Section" "neuromech" | first 3 ) }}
 				{{ partial "home_garden.html" . }}
 				{{ end }}
       		</div>
-			{{ with .Site.GetPage "section" "ai_blog" }}
+			{{ with .Site.GetPage "section" "NeuroMech" }}
 			<div class="d-flex flex-row-reverse">
         		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all articles</a>
       		</div>
       		{{ end }}
 		</div>
 		<div class="col-lg-4">
-			{{ with .Site.GetPage "section" "law_blog" }}
+			{{ with .Site.GetPage "section" "juriscript" }}
           	<div class="pb-4">
               	<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
           	</div>      
 			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
 			{{ end }}
 			<div class="row row-cols-1 g-4 mb-5">
-				{{ range ( where site.RegularPages "Section" "law_blog" | first 3 ) }}
+				{{ range ( where site.RegularPages "Section" "juriscript" | first 3 ) }}
 				{{ partial "home_garden.html" . }}
 				{{ end }}
       		</div>
-			{{ with .Site.GetPage "section" "law_blog" }}
+			{{ with .Site.GetPage "section" "juriscript" }}
 			<div class="d-flex flex-row-reverse">
         		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all articles</a>
       		</div>
@@ -71,18 +73,18 @@
 	<div class="row justify-content-between my-5">
 		<!-- Garden / Blog -->
 		<div class="col-lg-4">
-			{{ with .Site.GetPage "section" "garden" }}
+			{{ with .Site.GetPage "section" "guitar" }}
           	<div class="pb-4">
               	<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
           	</div>      
 			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
 			{{ end }}
 			<div class="row row-cols-1 g-4 mb-5">
-				{{ range ( where site.RegularPages "Section" "garden" | first 7 ) }}
+				{{ range ( where site.RegularPages "Section" "guitar" | first 7 ) }}
 				{{ partial "home_garden.html" . }}
 				{{ end }}
       		</div>
-			{{ with .Site.GetPage "section" "garden" }}
+			{{ with .Site.GetPage "section" "guitar" }}
 			<div class="d-flex flex-row-reverse">
         		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all articles</a>
       		</div>

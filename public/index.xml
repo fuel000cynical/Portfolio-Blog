@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Soham&#39;s place</title>
+    <title>SG</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on Soham&#39;s place</description>
+    <description>Recent content on SG</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
@@ -24,11 +24,11 @@
       <description>Example of markdown syntax you can use to edit your content</description>
     </item>
     <item>
-      <title>Nigalya Ponya</title>
+      <title>Soham Gupta</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>Himalayan red panda</description>
+      <description>Passionate about the law, technology, and creative expression.</description>
     </item>
   </channel>
 </rss>

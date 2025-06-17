@@ -29,24 +29,54 @@
     <loc>http://localhost:1313/art/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/garden/</loc>
+    <loc>http://localhost:1313/guitar/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/law_blog/</loc>
+    <loc>http://localhost:1313/juriscript/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ai_blog/</loc>
+    <loc>http://localhost:1313/neuromech/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ai_tags/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ai_tags/cleaning/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/garden_tags/cleaning/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/law_tags/cleaning/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ai_tags/fur/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/garden_tags/fur/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/law_tags/fur/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/garden_tags/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/law_tags/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/guitar/evergreen_example/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/juriscript/evergreen_example/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/neuromech/evergreen_example/</loc>
+    <lastmod>2019-03-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ai_tags/</loc>
-  </url><url>
     <loc>http://localhost:1313/art_tags/</loc>
-  </url><url>
-    <loc>http://localhost:1313/garden_tags/</loc>
-  </url><url>
-    <loc>http://localhost:1313/law_tags/</loc>
   </url>
 </urlset>
