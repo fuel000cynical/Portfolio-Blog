@@ -1,7 +1,7 @@
 ---
 title: "Theme Documentation"
 date: 2021-07-01
-draft: false
+draft: true
 project_tags: ["docs", "how-to"]
 status: "seeding"
 summary: "Details on how to create and update content on your site"
@@ -87,6 +87,3 @@ graph LR;
    E[height <br> 6cm] --> D
    F[width <br> 15cm] --> D
 {{< /mermaid >}}
-
----
-<small>Red panda icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></small>

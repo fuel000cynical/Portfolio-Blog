@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tech Projects on SG</title>
-    <link>http://localhost:1313/projects/</link>
-    <description>Recent content in Tech Projects on SG</description>
+    <title>AI on SG</title>
+    <link>http://localhost:1313/project_tags/ai/</link>
+    <description>Recent content in AI on SG</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
     <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/project_tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CTRLTube</title>
       <link>http://localhost:1313/projects/ctrltube/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/ctrltube/</guid>
       <description>A Chrome extension that helps learners stay focused on educational content by automatically filtering out non-educational YouTube videos. No more rabbit holes — just pure productivity.</description>
-    </item>
-    <item>
-      <title>Crypt.IT Website</title>
-      <link>http://localhost:1313/projects/crypt-it/</link>
-      <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/crypt-it/</guid>
-      <description>A website for the capture the flag event 2024 of Byte Club</description>
     </item>
   </channel>
 </rss>

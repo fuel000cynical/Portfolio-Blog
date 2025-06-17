@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webapp on SG</title>
+    <link>http://localhost:1313/project_tags/webapp/</link>
+    <description>Recent content in Webapp on SG</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Soham Gupta ©</copyright>
+    <lastBuildDate>Tue, 02 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/project_tags/webapp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crypt.IT Website</title>
+      <link>http://localhost:1313/projects/crypt-it/</link>
+      <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/crypt-it/</guid>
+      <description>A website for the capture the flag event 2024 of Byte Club</description>
+    </item>
+  </channel>
+</rss>

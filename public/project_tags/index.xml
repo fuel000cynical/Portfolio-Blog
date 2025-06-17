@@ -7,27 +7,41 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
-    <lastBuildDate>Sun, 01 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/project_tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Markdown</title>
-      <link>http://localhost:1313/project_tags/markdown/</link>
-      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/markdown/</guid>
+      <title>AI</title>
+      <link>http://localhost:1313/project_tags/ai/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project_tags/ai/</guid>
       <description></description>
     </item>
     <item>
-      <title>Docs</title>
-      <link>http://localhost:1313/project_tags/docs/</link>
-      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/docs/</guid>
+      <title>Extension</title>
+      <link>http://localhost:1313/project_tags/extension/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project_tags/extension/</guid>
       <description></description>
     </item>
     <item>
-      <title>How-To</title>
-      <link>http://localhost:1313/project_tags/how-to/</link>
-      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/how-to/</guid>
+      <title>Mongodb</title>
+      <link>http://localhost:1313/project_tags/mongodb/</link>
+      <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project_tags/mongodb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nodejs</title>
+      <link>http://localhost:1313/project_tags/nodejs/</link>
+      <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project_tags/nodejs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Webapp</title>
+      <link>http://localhost:1313/project_tags/webapp/</link>
+      <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project_tags/webapp/</guid>
       <description></description>
     </item>
   </channel>
