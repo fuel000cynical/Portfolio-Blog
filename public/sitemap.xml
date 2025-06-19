@@ -8,6 +8,24 @@
     <loc>http://localhost:1313/projects/crypt-it/</loc>
     <lastmod>2024-07-02T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/ai_tags/ai/</loc>
+    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ai_tags/</loc>
+    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ai_tags/cs50/</loc>
+    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ai_tags/notes/</loc>
+    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/neuromech/cs50ai-0/</loc>
+    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/project_tags/ai/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -15,9 +33,6 @@
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/project_tags/</loc>
-    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/project_tags/mongodb/</loc>
@@ -46,8 +61,6 @@
   </url><url>
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/ai_tags/</loc>
   </url><url>
     <loc>http://localhost:1313/art_tags/</loc>
   </url><url>

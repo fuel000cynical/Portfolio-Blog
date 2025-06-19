@@ -7,6 +7,28 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
+    <lastBuildDate>Thu, 19 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/ai_tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ai</title>
+      <link>http://localhost:1313/ai_tags/ai/</link>
+      <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ai_tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cs50</title>
+      <link>http://localhost:1313/ai_tags/cs50/</link>
+      <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ai_tags/cs50/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Notes</title>
+      <link>http://localhost:1313/ai_tags/notes/</link>
+      <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ai_tags/notes/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

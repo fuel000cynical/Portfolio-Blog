@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NeuroMech on SG</title>
-    <link>http://localhost:1313/neuromech/</link>
-    <description>Recent content in NeuroMech on SG</description>
+    <title>Notes on SG</title>
+    <link>http://localhost:1313/ai_tags/notes/</link>
+    <description>Recent content in Notes on SG</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
     <lastBuildDate>Thu, 19 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/neuromech/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/ai_tags/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Search</title>
       <link>http://localhost:1313/neuromech/cs50ai-0/</link>
