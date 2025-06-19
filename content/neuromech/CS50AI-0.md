@@ -3,7 +3,7 @@ title: "Search"
 date: 2025-06-19
 draft: false
 ai_tags: ["cs50", "ai", "notes"]
-summary: "Making Systems Find Paths - Notes on CS50AI Lecture 0 lecture"
+summary: "Making Systems Find Paths - Notes on CS50AI Lecture 0"
 ---
 
 Artificial Intelligence, at its very core, is about decision-making. And almost every decision — from finding a path through a maze to defeating an opponent in a game — can be framed as a search problem. Week 0 of CS50’s AI course dives right into this idea, teaching us how to formalize problems so that computers can solve them efficiently.
