@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@200;300;400;500;600&family=Encode+Sans+Semi+Condensed:wght@400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/all.min.css'>
+    <link disabled id="dark-mode-theme" rel="stylesheet" href='http://localhost:1313/css/dark.css'>
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/style.css'>
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/my_style.css'>
+    
+    
+    
+    <title>SG | Knowledge</title>
+    <meta name="description" content="Inferring and Creating Logic  - Notes on CS50AI Lecture 1">
+</head><body><nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="http://localhost:1313/">
+            
+            <b style="font-weight: 800;">SG</b>
+            
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0"><li class='nav-item '>
+                    <a class="nav-link" href="/neuromech/"> NeuroMech</a>
+                </li>
+            <li class='nav-item '>
+                    <a class="nav-link" href="/juriscript/"> Juriscript</a>
+                </li>
+            <li class='nav-item '>
+                    <a class="nav-link" href="/projects/"> Tech Projects</a>
+                </li>
+            <li class='nav-item '>
+                    <a class="nav-link" href="/about/"> About</a>
+                </li>
+             
+            <li class="nav-item px-2 pt-1">
+                <a class="btn fas fa-moon" id="dark-mode-toggle"></a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav><div id="content">
+
+<div class="container" style="max-width: 800px;">
+    <div class="py-4 rounded-3">
+        <div class="container-fluid py-2">
+            <h1 class="display-2 mb-4 text-center">Knowledge</h1>
+        </div>
+        
+        <p class="text-center fs-4 fst-italic serif">Inferring and Creating Logic  - Notes on CS50AI Lecture 1</p>
+        
+        <div class="text-center pt-4">
+            
+        </div>
+    </div>
+    <div class="row justify-content-center mb-5">
+        <div class="col-12">
+            <p class="card-date m-0">
+                
+                
+                    Created Nov 24, 2025
+                
+            </p>
+            <hr class="dropdown-divider">
+            <div class="row justify-content-between">
+                <div class="col-sm-4">
+                    
+                </div>
+                <div class="col-sm-8" style="text-align: right;">
+                    
+                
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-2">
+        <div class="serif main-content">
+            <p>To understand how to build Artificial Intelligence we must have an understanding of how a machine can <em>think</em> about information. Before an algorithm can plan, predict, or act, it needs a structured way to represent what it knows and what it can infer from that knowledge. <strong>Lecture 1 of CS50’s AI course, Knowledge</strong>, introduces this foundation by exploring propositional logic, inference rules, and model checking. These tools allow an AI system to move from raw facts to meaningful conclusions, much like how humans reason step-by-step. This lecture sets the stage for everything else in AI: once a machine can represent knowledge clearly, it can begin to reason intelligently.</p>
+<h3 id="cs50ai-lecture1-by-david-jmilan-and-bryan-yu"id="cs50ai-lecture1-by-david-jmilan-and-bryan-yu"
+>CS50AI-Lecture1 by David J.Milan and Bryan Yu 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#cs50ai-lecture1-by-david-jmilan-and-bryan-yu&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><iframe style="aspect-ratio: 16 / 9; height: 100% !important; width: 45vw;" src="https://www.youtube.com/embed/HWQLez87vqM?si=mwrK019gVCeDRAgt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
+<p>In these notes, I unpack key concepts discussed in the course, what is knowledge, sentences, proportional logic, different logical connectives and how we can draw inferences from them, models and model checking, some inference rules, and lastly what are the limitations to the models discussed.</p>
+<h1 id="index"id="index"
+>Index 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#index&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<ol>
+<li><a href="#what-is-knowledge">What is Knowledge?</a></li>
+<li><a href="#propositional-logic">Propositional Logic</a></li>
+<li><a href="#logical-connectives">Logical Connectives</a></li>
+<li><a href="#implication-vs-biconditional">Implication vs Biconditional</a></li>
+<li><a href="#inference">Inference</a></li>
+<li><a href="#models--model-checking">Models &amp; Model Checking</a></li>
+<li><a href="#inference-rules">Inference Rules</a></li>
+<li><a href="#resolution">Resolution</a></li>
+<li><a href="#uncertainty--limitations">Uncertainty &amp; Limitations</a></li>
+<li><a href="#ending-note">Ending Note</a>
+<br><br></li>
+</ol>
+<h1 id="what-is-knowledge"id="what-is-knowledge"
+>What is Knowledge? 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#what-is-knowledge&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>It&rsquo;s giving the computer the ability to use information from the world by reasoning based on some pre-entered information, i.e. knowledge.</p>
+<p>In computer terms, <strong>knowledge</strong> is:</p>
+<ul>
+<li>Facts about the world</li>
+<li>Rules that connect those facts</li>
+<li>Logical structures that allow inference</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li><em>It is raining.</em></li>
+<li><em>If it is raining, the ground gets wet.</em><br>
+→ So the ground is wet.</li>
+</ul>
+<p>This is the simplest form of <strong>deterministic reasoning</strong>.</p>
+<p>AI systems rely on this kind of structure to move from known facts → conclusions.</p>
+<p>Now, while we humans use language, we have to be formal and have some set elements to train an AI on this.</p>
+<blockquote>
+<h3 id="sentence"id="sentence"
+>Sentence 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#sentence&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>One of the most basic element that we must define is the sentence. It&rsquo;s an assertion about the world in a &ldquo;knowledge representation language.&rdquo;</p></blockquote>
+<p>As we move forward, we need to understand proportional logic, the logic we are gonna be using to reason.</p>
+<br>
+<h1 id="propositional-logic"id="propositional-logic"
+>Propositional Logic 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#propositional-logic&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Propositional logic uses <strong>propositions</strong>—statements that are either <strong>true</strong> or <strong>false</strong>.</p>
+<p>Some examples of these propositions:</p>
+<ul>
+<li>P: “It is raining.”</li>
+<li>Q: “The sky is cloudy.”</li>
+<li>R: “Soham is coding.”</li>
+</ul>
+<p>In each of these statements there is no “maybe”. Each statement can either be right or wrong.
+Everything is binary at this level.</p>
+<p>Propositional logic is the simplest logical system and forms the base for more complex reasoning (like first-order logic).</p>
+<br>
+<h1 id="logical-connectives"id="logical-connectives"
+>Logical Connectives 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#logical-connectives&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>As we move forward to making our AI understand this and reason, we need to define a method by which the AI can check for the proportional logic of statements in a combined form. Thus, we use connectives. Connectives combine propositions to form more expressive statements.</p>
+<p>The connectives we shall be using are:</p>
+<h3 id="1-not-p"id="1-not-p"
+><strong>1. NOT (¬P)</strong> 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#1-not-p&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>Takes a statement and flips its truth value.<br>
+If <code>P = True</code>, then <code>¬P = False</code>.</p>
+<h3 id="2-and-p--q"id="2-and-p--q"
+><strong>2. AND (P ∧ Q)</strong> 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#2-and-p--q&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>True only if <em>both</em> P and Q are true.</p>
+<table>
+  <thead>
+      <tr>
+          <th>P</th>
+          <th>Q</th>
+          <th>(P ∧ Q)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>True</td>
+          <td>True</td>
+          <td>True</td>
+      </tr>
+      <tr>
+          <td>True</td>
+          <td>False</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>False</td>
+          <td>True</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>False</td>
+          <td>False</td>
+          <td>False</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="3-or-p--q"id="3-or-p--q"
+><strong>3. OR (P ∨ Q)</strong> 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#3-or-p--q&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>True if <em>at least one</em> of P or Q is true.</p>
+<table>
+  <thead>
+      <tr>
+          <th>P</th>
+          <th>Q</th>
+          <th>(P ∧ Q)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>True</td>
+          <td>True</td>
+          <td>True</td>
+      </tr>
+      <tr>
+          <td>True</td>
+          <td>False</td>
+          <td>True</td>
+      </tr>
+      <tr>
+          <td>False</td>
+          <td>True</td>
+          <td>True</td>
+      </tr>
+      <tr>
+          <td>False</td>
+          <td>False</td>
+          <td>False</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="4-implies-p--q"id="4-implies-p--q"
+><strong>4. IMPLIES (P → Q)</strong> 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#4-implies-p--q&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>“If P is true, then Q must be true.”</p>
+<p>This is quite an important logical connection. One way to explain this is by example.
+<br>
+We are given the sentence that &ldquo;A will go out, if it doesn&rsquo;t rain&rdquo;
+Here, the statement &ldquo;it doesn&rsquo;t rain&rdquo; is P and &ldquo;A will go out&rdquo; is Q, so if P is true, i.e. it doesn&rsquo;t rain, Q will be true -&gt; A will go out.</p>
+<h3 id="5-biconditional-p--q"id="5-biconditional-p--q"
+><strong>5. BICONDITIONAL (P ↔ Q)</strong> 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#5-biconditional-p--q&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>True if P and Q share the same truth value.</p>
+<p>The statement is such that if P is true then Q will be true, and vice-versa.</p>
+<br>
+<h1 id="implication-vs-biconditional"id="implication-vs-biconditional"
+>Implication vs Biconditional 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#implication-vs-biconditional&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>It&rsquo;s quite important to note the difference between these two logical connectives as this is a common source of confusion.</p>
+<h3 id="implication-p--q"id="implication-p--q"
+><strong>Implication (P → Q)</strong> 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#implication-p--q&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>Only says:</p>
+<blockquote>
+<p>When P happens, Q must follow.</p></blockquote>
+<p>But Q can be true without P.</p>
+<p>Following this with an example, we have the statement, &ldquo;If it doesn&rsquo;t rain, A will go out&rdquo;. Here, we can say that if it doesn&rsquo;t rain then A will go out, but we can&rsquo;t say that if A went out, it wasn&rsquo;t raining. The condition is one directional.</p>
+<h3 id="biconditional-p--q"id="biconditional-p--q"
+><strong>Biconditional (P ↔ Q)</strong> 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#biconditional-p--q&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>Says:</p>
+<blockquote>
+<p>P is true <strong>exactly when</strong> Q is true.<br>
+They depend on each other.</p></blockquote>
+<p>Following this with an example, we have the statement, &ldquo;Only if it doesn&rsquo;t rain, A will go out&rdquo;. Here, we can say that if it doesn&rsquo;t rain then A will go out, and we can also say that if A went out, it wasn&rsquo;t raining. The condition is thus for both the statements with respect to the other.</p>
+<br>
+<h1 id="inference"id="inference"
+>Inference 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#inference&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Inference is the process of taking known facts and deriving new facts. It is the base of our knowledge system and the output. To illustrate the meaning of inference, the following example is take.</p>
+<p>Example:</p>
+<ul>
+<li>Fact: “All men are mortal.”</li>
+<li>Fact: “Socrates is a man.”</li>
+<li>Conclusion: “Socrates is mortal.”</li>
+</ul>
+<p>This is a deductive chain. It is now our task to examine how we may build AI systems that can reason through such statements and thus automate such chains.</p>
+<h1 id="models--model-checking"id="models--model-checking"
+>Models &amp; Model Checking 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#models--model-checking&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>A model is an assignment of a truth value to every propositional symbol. A <strong>model</strong> assigns true/false values to each proposition to form a possible world. [It is to note that if there are &ldquo;n&rdquo; variables which are propositional symbols, then the possible worlds are 2 raised to the power n].</p>
+<p>An example model:</p>
+<ul>
+<li><code>P = True</code></li>
+<li><code>Q = False</code></li>
+<li><code>R = True</code></li>
+</ul>
+<p>A model is <em>valid</em> if it satisfies all the statements in our knowledge base.</p>
+<blockquote>
+<p>The <strong>Knowledge Base (KB)</strong> is a set of sentences known by a knowledge-based agent. We use this to draw conclusions.</p>
+<p>Example KB:
+P → Q
+P</p>
+<p>We can ask the KB:</p>
+<blockquote>
+<p>“Is Q true?”</p></blockquote>
+<p>If all models where the KB is true also imply Q → we can infer Q.</p></blockquote>
+<h3 id="model-checking"id="model-checking"
+><strong>Model Checking</strong> 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#model-checking&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>Model Checking is the simplest algorithm possible to make a computer have knowledge and reason through it. In this setup, we check all possible models and see which ones satisfy the rules.</p>
+<p>An example that we can use to see is let&rsquo;s say we need to check if the Knowledge Base (KB) entails A. (Entailment refers to the state in which in every model in which KB hold true, A will also hold true).</p>
+<p>Example: We have three sentences.</p>
+<ul>
+<li>P: &ldquo;Its Tuesday&rdquo;</li>
+<li>Q: &ldquo;It&rsquo;s Raining&rdquo;</li>
+<li>R: &ldquo;Harry will go for a Run&rdquo;</li>
+</ul>
+<p>And let&rsquo;s have the KB to be (P ∧ (¬Q)) → R
+Or, in simple english, If it&rsquo;s Tuesday (P) AND it&rsquo;s NOT Raining (¬Q), then Harry will go for a Run (R).</p>
+<p>Then, the model checking would first enumerate all possible models:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Sno.</th>
+          <th>P</th>
+          <th>Q</th>
+          <th>R</th>
+          <th>KB</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>False</td>
+          <td>False</td>
+          <td>False</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>False</td>
+          <td>False</td>
+          <td>True</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>False</td>
+          <td>True</td>
+          <td>False</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>False</td>
+          <td>True</td>
+          <td>True</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>True</td>
+          <td>False</td>
+          <td>False</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>True</td>
+          <td>False</td>
+          <td>True</td>
+          <td>True</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>True</td>
+          <td>True</td>
+          <td>False</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>True</td>
+          <td>True</td>
+          <td>True</td>
+          <td>False</td>
+      </tr>
+  </tbody>
+</table>
+<p>Here, we remove world 1,2,3,4 as the propositional symbol P is false, while we remove 7,8 as ¬Q is false. Now, we needed to find a world where if P and ¬Q, then R must be true.</p>
+<p>Thus, there is only world 6 where our KB entails A, this shall be our inference and output.</p>
+<blockquote>
+<h3 id="knowledge-engineering"id="knowledge-engineering"
+>Knowledge Engineering 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#knowledge-engineering&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>This is the process in which one takes a problem and figures out how to distill it into symbols. An example can be is the that the famous game, Cluedo, can be distilled into symbols.</p></blockquote>
+<p>This method is noted to be accurate but slow as propositions grow (exponential explosion).</p>
+<br>
+<h1 id="inference-rules"id="inference-rules"
+>Inference Rules 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#inference-rules&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>To make it possible for AI to infer particular propositional symbol&rsquo;s value from other symbols, we certain set inference rules. These are:</p>
+<h3 id="1-modus-ponens"id="1-modus-ponens"
+><strong>1. Modus Ponens</strong> 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#1-modus-ponens&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>P → Q
+P
+∴ Q</p>
+<p>The most fundamental inference rule.</p>
+<h3 id="2-and-elimination"id="2-and-elimination"
+><strong>2. And-Elimination</strong> 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#2-and-elimination&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>From <code>P ∧ Q</code> we can infer <code>P</code> or <code>Q</code>.</p>
+<h3 id="3-or-introduction"id="3-or-introduction"
+><strong>3. Or-Introduction</strong> 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#3-or-introduction&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>From <code>P</code>, we can infer <code>P ∨ Q</code>.</p>
+<p>These rules allow AI to build step-by-step chains of reasoning.</p>
+<br>
+<h1 id="resolution"id="resolution"
+>Resolution 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#resolution&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Resolution is a single inference rule powerful enough to replace all others.</p>
+<p>The idea is to:</p>
+<ul>
+<li>Convert everything to <strong>CNF (Conjunctive Normal Form)</strong></li>
+<li>Use resolution rule on clauses</li>
+<li>Derive contradictions to prove things</li>
+</ul>
+<p>An example:
+If we have (P ∨ Q) and another knowledge to be (¬Q ∨ R) <br> then, (P ∨ R)</p>
+<p>Resolution is widely used in SAT solvers and automated reasoning systems.</p>
+<br>
+<h1 id="uncertainty--limitations"id="uncertainty--limitations"
+>Uncertainty &amp; Limitations 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#uncertainty--limitations&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>We know that pure propositional logic is powerful but, its limited by the following:</p>
+<ul>
+<li>It cannot handle uncertainty</li>
+<li>It grows exponentially with more variables</li>
+<li>It cannot express relationships like “Soham is taller than Sam” (which requires first-order logic)</li>
+</ul>
+<p>Later in the course, probabilistic reasoning (Bayes, HMMs, etc.) will fix these issues.</p>
+<h1 id="ending-note"id="ending-note"
+>Ending Note 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-1/#ending-note&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>This post is part of my ongoing deep dive into <strong>CS50’s Introduction to Artificial Intelligence with Python</strong>, where I’m documenting my learnings, insights, and interpretations in a practical, simplified form.</p>
+<p>If you’re also exploring AI — whether as a student, researcher, or just a curious mind — I’d love to connect and exchange ideas.</p>
+<p>📬 Let’s connect on LinkedIn: <a href="https://www.linkedin.com/in/soham-gupta-b567b2274/">linkedin</a></p>
+<p>More coming soon from future weeks of CS50AI. Stay tuned — and stay curious.
+— <em>Soham Gupta</em></p>
+<blockquote>
+<p>This post is based on <em><strong><a href="https://cs50.harvard.edu/ai/2024/">CS50’s Introduction to Artificial Intelligence with Python</a></strong></em> — an open course by Harvard University taught by <strong><a href="https://cs.harvard.edu/malan/">David J. Malan</a></strong> and <strong><a href="https://pll.harvard.edu/instructor/brian-yu/">Brian Yu</a></strong>.</p>
+<p>You can explore the course materials <strong><a href="https://github.com/cs50">here on GitHub</a></strong>.</p></blockquote>
+
+        </div>
+    </div>
+</div>
+
+
+        </div><div class="container">
+    <div class="row justify-content-between">
+        <div class="col-sm-4">
+            <p class="footer">Soham Gupta © 2025 </p>
+        </div>
+        <div class="col-sm-6 d-flex flex-row-reverse">
+            
+            <a class="footer-social px-2"  href="https://github.com/fuel000cynical" target="_blank"><i class="fab fa-github"></i></a>
+            
+            <a class="footer-social px-2"  href="https://www.linkedin.com/in/soham-gupta-b567b2274/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            
+        </div>
+    </div>
+</div>
+<script src='http://localhost:1313/js/bootstrap.min.js'></script>
+<script type="text/javascript" src='http://localhost:1313/js/jquery.min.js'></script>
+<script src='http://localhost:1313/js/isotope.pkgd.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+<script src='http://localhost:1313/js/dark.js'></script>
+<script>
+
+
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light" 
+setTheme(savedTheme);
+
+</script>
+<script src='http://localhost:1313/js/isotope.js'></script>
+<script src='http://localhost:1313/js/mermaid.min.js'></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'});</script>
+</body>
+</html>
