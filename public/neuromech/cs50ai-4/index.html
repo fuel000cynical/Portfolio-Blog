@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@200;300;400;500;600&family=Encode+Sans+Semi+Condensed:wght@400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/all.min.css'>
+    <link disabled id="dark-mode-theme" rel="stylesheet" href='http://localhost:1313/css/dark.css'>
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/style.css'>
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/my_style.css'>
+    
+    
+    
+    <title>SG | Learning</title>
+    <meta name="description" content="Learning as Approximation, Mistake, and Slow Pattern Recognition - Notes on CS50AI Lecture 4">
+</head><body><nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="http://localhost:1313/">
+            
+            <b style="font-weight: 800;">SG</b>
+            
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0"><li class='nav-item '>
+                    <a class="nav-link" href="/neuromech/"> NeuroMech</a>
+                </li>
+            <li class='nav-item '>
+                    <a class="nav-link" href="/juriscript/"> Juriscript</a>
+                </li>
+            <li class='nav-item '>
+                    <a class="nav-link" href="/projects/"> Tech Projects</a>
+                </li>
+            <li class='nav-item '>
+                    <a class="nav-link" href="/about/"> About</a>
+                </li>
+             
+            <li class="nav-item px-2 pt-1">
+                <a class="btn fas fa-moon" id="dark-mode-toggle"></a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav><div id="content">
+
+<div class="container" style="max-width: 800px;">
+    <div class="py-4 rounded-3">
+        <div class="container-fluid py-2">
+            <h1 class="display-2 mb-4 text-center">Learning</h1>
+        </div>
+        
+        <p class="text-center fs-4 fst-italic serif">Learning as Approximation, Mistake, and Slow Pattern Recognition - Notes on CS50AI Lecture 4</p>
+        
+        <div class="text-center pt-4">
+            
+        </div>
+    </div>
+    <div class="row justify-content-center mb-5">
+        <div class="col-12">
+            <p class="card-date m-0">
+                
+                
+                    Created Dec 13, 2025
+                
+            </p>
+            <hr class="dropdown-divider">
+            <div class="row justify-content-between">
+                <div class="col-sm-4">
+                    
+                </div>
+                <div class="col-sm-8" style="text-align: right;">
+                    
+                
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-2">
+        <div class="serif main-content">
+            <p>At some point, writing rules stops working.</p>
+<p>You can write rules for chess openings. You can write rules for how to drive on an empty road. You can even write rules for how to answer exam questions if the format never changes. But very quickly, those rules begin to crack. There are exceptions. There are edge cases. There are situations where the rule technically applies but feels wrong.</p>
+<h3 id="cs50ai-lecture4-by-david-jmilan-and-bryan-yu"id="cs50ai-lecture4-by-david-jmilan-and-bryan-yu"
+>CS50AI-Lecture4 by David J.Milan and Bryan Yu 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-4/#cs50ai-lecture4-by-david-jmilan-and-bryan-yu&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><iframe style="aspect-ratio: 16 / 9; height: 100% !important; width: 45vw;" src="https://www.youtube.com/embed/-g0iJjnO2_w?si=_me7SVGLi4_GqMN9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
+<p>Lecture 4 of CS50’s AI course begins exactly at that fracture point.</p>
+<p>This is where artificial intelligence stops being about <em>knowing</em> and starts being about <strong>learning</strong>. And learning, it turns out, is not clean. It is noisy. It is inefficient. It involves making the same mistake several times before something finally clicks.</p>
+<p>That alone already feels uncomfortably human.</p>
+<br>
+<h1 id="index"id="index"
+>Index 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-4/#index&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<ol>
+<li><a href="#what-does-it-mean-to-learn">What Does It Mean to Learn?</a></li>
+<li><a href="#supervised-learning">Supervised Learning</a></li>
+<li><a href="#nearest-neighbor-learning">Nearest-Neighbor Learning</a></li>
+<li><a href="#perceptrons-and-linear-decision-boundaries">Perceptrons and Linear Decision Boundaries</a></li>
+<li><a href="#decision-trees">Decision Trees</a></li>
+<li><a href="#overfitting-and-generalization">Overfitting and Generalization</a></li>
+<li><a href="#reinforcement-learning">Reinforcement Learning</a></li>
+<li><a href="#ending-note">Ending Note</a></li>
+</ol>
+<br>
+<p>Before this lecture, most AI systems we studied lived in polite, well-defined worlds. The maze existed. The probabilities were given. The costs were known. Even uncertainty had structure.</p>
+<p>Learning removes that safety.</p>
+<p>Now the system is thrown into the world with incomplete information and told, in effect: <em>figure it out</em>. There is no rulebook. There is only experience.</p>
+<br>
+<h1 id="what-does-it-mean-to-learn"id="what-does-it-mean-to-learn"
+>What Does It Mean to Learn? 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-4/#what-does-it-mean-to-learn&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>When we say a machine “learns,” it’s tempting to imagine something dramatic happening. Some moment of insight. Some internal shift. That’s not what’s going on.</p>
+<p>Learning, in the AI sense, is painfully literal. A system is said to learn if its <strong>performance improves with experience</strong>.</p>
+<p>That’s it. No understanding. No awareness. Just improvement.</p>
+<p>And yet, that definition hides something profound.</p>
+<p>Think about how you learned to read people’s moods. No one gave you a formal rule like: <em>if eyebrows move at angle θ and voice pitch increases by x, then anger</em>. You were just exposed to situations. Enough of them. Slowly, something settled.</p>
+<p>AI learning works the same way. Patterns accumulate. Weights adjust. Errors reduce. Nothing feels intelligent in isolation. Intelligence emerges only across time.</p>
+<br>
+<h1 id="supervised-learning"id="supervised-learning"
+>Supervised Learning 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-4/#supervised-learning&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Supervised learning is the most comfortable kind of learning, because it mirrors how we are taught.</p>
+<p>There is an input. There is a correct output. Someone tells you when you are wrong.</p>
+<p>It’s school. It’s coaching. It’s training with feedback.</p>
+<p>Emails labeled spam or not spam. Images labeled cat or dog. Past cases labeled approved or rejected. The AI is not discovering truth here. It is absorbing correlations.</p>
+<p>What matters is not that it gets the training examples right. What matters is whether it performs well when the labels disappear.</p>
+<p>That is where anxiety enters.</p>
+<p>Because a model can look brilliant on data it has already seen. It can also collapse the moment the world changes slightly. And the unsettling thing is that, during training, both models look identical.</p>
+<br>
+<h1 id="nearest-neighbor-learning"id="nearest-neighbor-learning"
+>Nearest-Neighbor Learning 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-4/#nearest-neighbor-learning&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Nearest-neighbor learning almost feels like cheating.</p>
+<p>There is no deep abstraction. No internal rule. Just comparison.</p>
+<p>Something new appears. The system asks: <em>what does this resemble?</em> And then it copies the outcome.</p>
+<p>This is how recommendation systems work. This is how humans work. We look at similar people. Similar situations. Similar outcomes. We imitate.</p>
+<p>It’s crude. It’s shallow. And it works more often than it should.</p>
+<p>What bothers me about nearest-neighbor methods is not their simplicity, but their honesty. They don’t pretend to understand. They just say: <em>this looks familiar</em>.</p>
+<p>In some ways, that is more realistic than elaborate models that claim insight but are just better at hiding their guesswork.</p>
+<br>
+<h1 id="perceptrons-and-linear-decision-boundaries"id="perceptrons-and-linear-decision-boundaries"
+>Perceptrons and Linear Decision Boundaries 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-4/#perceptrons-and-linear-decision-boundaries&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Eventually, storing every example becomes impractical. Memory fills up. Comparisons slow down. We want compression.</p>
+<p>Perceptrons offer that compression.</p>
+<p>They don’t remember individual cases. They remember a <strong>boundary</strong>. A rough dividing line between categories. On one side, yes. On the other, no.</p>
+<p>This is elegant. Clean. Mathematical.</p>
+<p>And deeply fragile.</p>
+<p>Because the world is rarely separable by straight lines. People don’t behave linearly. Risk doesn’t accumulate neatly. Meaning doesn’t split cleanly.</p>
+<p>The perceptron’s failure is instructive. It reminds us that every learning model smuggles in assumptions about reality. When those assumptions break, performance collapses — not gradually, but suddenly.</p>
+<br>
+<h1 id="decision-trees"id="decision-trees"
+>Decision Trees 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-4/#decision-trees&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Decision trees feel different. They feel explainable. Almost comforting.</p>
+<p>If this, then that. Otherwise, something else.</p>
+<p>You can trace the logic. You can point to a path. You can say <em>this is why the decision happened</em>. Humans love this.</p>
+<p>But trees can grow wild. Too many questions. Too many branches. Too much confidence in early splits.</p>
+<p>A bad question near the top poisons everything below it. And once again, this feels familiar. First impressions matter too much. Early labels stick too strongly. Correction becomes expensive.</p>
+<p>Decision trees quietly teach a lesson: learning is not just about data. It’s about <strong>which distinctions you choose to care about</strong>.</p>
+<br>
+<h1 id="overfitting-and-generalization"id="overfitting-and-generalization"
+>Overfitting and Generalization 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-4/#overfitting-and-generalization&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>This is where learning turns dangerous.</p>
+<p>A model can always be made to fit the past perfectly. Always. You just make it complex enough. Flexible enough. Detailed enough.</p>
+<p>But perfection on the past often signals failure in the future.</p>
+<p>Overfitting is what happens when a system mistakes noise for structure. When it memorizes accidents. When it falls in love with coincidences.</p>
+<p>This is not a machine problem. This is a human problem too.</p>
+<p>We overlearn bad experiences. We extrapolate from tiny samples. We see patterns where none exist. We become confident for the wrong reasons.</p>
+<p>Generalization — the ability to perform well on what you haven’t seen — is the real test. And it is never guaranteed. Only managed. Carefully. With humility.</p>
+<br>
+<h1 id="reinforcement-learning"id="reinforcement-learning"
+>Reinforcement Learning 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-4/#reinforcement-learning&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Reinforcement learning removes the comfort of being told the right answer.</p>
+<p>There is no label. There is only consequence.</p>
+<p>You act. Something happens. You feel reward or punishment. Over time, behaviour shifts.</p>
+<p>This is how animals learn. This is how children learn. This is how habits form.</p>
+<p>What makes reinforcement learning unsettling is that it doesn’t care <em>why</em> a reward exists. Only that it does. Short-term gains can dominate. Long-term harms can be ignored.</p>
+<p>A system optimizes what you reward — not what you intended.</p>
+<p>That observation alone should make anyone uncomfortable.</p>
+<p><br><br></p>
+<h1 id="ending-note"id="ending-note"
+>Ending Note 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-4/#ending-note&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Lecture 4 feels less like computer science and more like psychology wearing mathematical clothing.</p>
+<p>Learning systems are not rational in the way we imagine intelligence to be. They are statistical. They are biased by data. They are shaped by feedback. They overfit. They generalize poorly. They improve anyway.</p>
+<p>They don’t discover truth. They approximate usefulness.</p>
+<p>And maybe that is all intelligence ever was.</p>
+<p>This post is part of my ongoing deep dive into <strong>CS50’s Introduction to Artificial Intelligence with Python</strong>, where I’m documenting my learnings, insights, and interpretations in a practical, simplified form.</p>
+<p>If you’re also exploring AI — whether as a student, researcher, or just a curious mind — I’d love to connect and exchange ideas.</p>
+<p>📬 Let’s connect on LinkedIn: <a href="https://www.linkedin.com/in/soham-gupta-b567b2274/">linkedin</a></p>
+<p>More coming soon from future weeks of CS50AI. Stay tuned — and stay curious.
+— <em>Soham Gupta</em></p>
+<blockquote>
+<p>This post is based on <em><strong><a href="https://cs50.harvard.edu/ai/2024/">CS50’s Introduction to Artificial Intelligence with Python</a></strong></em> — an open course by Harvard University taught by <strong><a href="https://cs.harvard.edu/malan/">David J. Malan</a></strong> and <strong><a href="https://pll.harvard.edu/instructor/brian-yu/">Brian Yu</a></strong>.</p>
+<p>You can explore the course materials <strong><a href="https://github.com/cs50">here on GitHub</a></strong>.</p></blockquote>
+
+        </div>
+    </div>
+</div>
+
+
+        </div><div class="container">
+    <div class="row justify-content-between">
+        <div class="col-sm-4">
+            <p class="footer">Soham Gupta © 2025 </p>
+        </div>
+        <div class="col-sm-6 d-flex flex-row-reverse">
+            
+            <a class="footer-social px-2"  href="https://github.com/fuel000cynical" target="_blank"><i class="fab fa-github"></i></a>
+            
+            <a class="footer-social px-2"  href="https://www.linkedin.com/in/soham-gupta-b567b2274/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            
+        </div>
+    </div>
+</div>
+<script src='http://localhost:1313/js/bootstrap.min.js'></script>
+<script type="text/javascript" src='http://localhost:1313/js/jquery.min.js'></script>
+<script src='http://localhost:1313/js/isotope.pkgd.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+<script src='http://localhost:1313/js/dark.js'></script>
+<script>
+
+
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light" 
+setTheme(savedTheme);
+
+</script>
+<script src='http://localhost:1313/js/isotope.js'></script>
+<script src='http://localhost:1313/js/mermaid.min.js'></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'});</script>
+</body>
+</html>

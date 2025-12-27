@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@200;300;400;500;600&family=Encode+Sans+Semi+Condensed:wght@400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/all.min.css'>
+    <link disabled id="dark-mode-theme" rel="stylesheet" href='http://localhost:1313/css/dark.css'>
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/style.css'>
+    <link rel="stylesheet" type="text/css" href='http://localhost:1313/css/my_style.css'>
+    
+    
+    
+    <title>SG | Optimization</title>
+    <meta name="description" content="Making the Best Choice When Perfection Is Too Expensive - Notes on CS50AI Lecture 3">
+</head><body><nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="http://localhost:1313/">
+            
+            <b style="font-weight: 800;">SG</b>
+            
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0"><li class='nav-item '>
+                    <a class="nav-link" href="/neuromech/"> NeuroMech</a>
+                </li>
+            <li class='nav-item '>
+                    <a class="nav-link" href="/juriscript/"> Juriscript</a>
+                </li>
+            <li class='nav-item '>
+                    <a class="nav-link" href="/projects/"> Tech Projects</a>
+                </li>
+            <li class='nav-item '>
+                    <a class="nav-link" href="/about/"> About</a>
+                </li>
+             
+            <li class="nav-item px-2 pt-1">
+                <a class="btn fas fa-moon" id="dark-mode-toggle"></a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav><div id="content">
+
+<div class="container" style="max-width: 800px;">
+    <div class="py-4 rounded-3">
+        <div class="container-fluid py-2">
+            <h1 class="display-2 mb-4 text-center">Optimization</h1>
+        </div>
+        
+        <p class="text-center fs-4 fst-italic serif">Making the Best Choice When Perfection Is Too Expensive - Notes on CS50AI Lecture 3</p>
+        
+        <div class="text-center pt-4">
+            
+        </div>
+    </div>
+    <div class="row justify-content-center mb-5">
+        <div class="col-12">
+            <p class="card-date m-0">
+                
+                
+                    Created Dec 7, 2025
+                
+            </p>
+            <hr class="dropdown-divider">
+            <div class="row justify-content-between">
+                <div class="col-sm-4">
+                    
+                </div>
+                <div class="col-sm-8" style="text-align: right;">
+                    
+                
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-2">
+        <div class="serif main-content">
+            <p>Have you ever wondered how Google Maps suggests a “good enough” route instead of testing every possible path, or how recommendation systems settle on a decent suggestion without exploring every option?</p>
+<h3 id="cs50ai-lecture3-by-david-jmilan-and-bryan-yu"id="cs50ai-lecture3-by-david-jmilan-and-bryan-yu"
+>CS50AI-Lecture3 by David J.Milan and Bryan Yu 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#cs50ai-lecture3-by-david-jmilan-and-bryan-yu&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><iframe style="aspect-ratio: 16 / 9; height: 100% !important; width: 45vw;" src="https://www.youtube.com/embed/qK46ET1xk2A?si=tkRdQNzETU_mJS-7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
+<p>Lecture 3 of CS50’s AI course introduces <strong>optimization</strong> — the idea that intelligence is often about finding <em>better</em> solutions, not <em>perfect</em> ones.</p>
+<p>In this lecture, we move away from asking <em>“Is this correct?”</em> and instead ask <em>“Is this the best we can reasonably do?”</em></p>
+<h1 id="index"id="index"
+>Index 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#index&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<ol>
+<li><a href="#what-is-optimization">What Is Optimization?</a></li>
+<li><a href="#local-search">Local Search</a></li>
+<li><a href="#hill-climbing">Hill Climbing</a></li>
+<li><a href="#local-minima-plateaus-and-ridges">Local Minima, Plateaus, and Ridges</a></li>
+<li><a href="#random-restart">Random Restart</a></li>
+<li><a href="#simulated-annealing">Simulated Annealing</a></li>
+<li><a href="#linear-programming">Linear Programming</a></li>
+<li><a href="#constraint-satisfaction-problems">Constraint Satisfaction Problems</a></li>
+<li><a href="#ending-note">Ending Note</a>
+<br><br></li>
+</ol>
+<p>In many real-world problems, AI is not trying to <em>reach a destination</em>.<br>
+Instead, it is trying to <em>improve a situation</em>.</p>
+<p>There may not be a clearly defined goal state. There may not even be a single best answer. There is just a large space of possibilities, and we want one that is reasonably good.</p>
+<p>This is where <strong>optimization</strong> comes in.</p>
+<br>
+<h1 id="what-is-optimization"id="what-is-optimization"
+>What Is Optimization? 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#what-is-optimization&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Optimization is the problem of choosing the <em>best available option</em> from a set of possibilities, according to some measure.</p>
+<p>That measure is usually formalised as a function.</p>
+<p>Sometimes we want to <strong>maximize</strong> something:</p>
+<ul>
+<li>Accuracy</li>
+<li>Profit</li>
+<li>Satisfaction</li>
+<li>Coverage</li>
+</ul>
+<p>Sometimes we want to <strong>minimize</strong> something:</p>
+<ul>
+<li>Cost</li>
+<li>Error</li>
+<li>Distance</li>
+<li>Time</li>
+</ul>
+<p>Consider a simple daily decision: how long should you study today?</p>
+<p>Studying zero hours is bad. Studying 20 hours is also bad. Somewhere in between lies a balance point. That balance depends on fatigue, deadlines, and diminishing returns. Optimization captures this idea mathematically.</p>
+<p>The key shift here is subtle but important:</p>
+<blockquote>
+<p>We are no longer asking “Is this correct?”<br>
+We are asking “Is this better than the alternatives?”</p></blockquote>
+<br>
+<h1 id="local-search"id="local-search"
+>Local Search 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#local-search&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Local search approaches optimization the way humans usually do: <strong>incrementally</strong>.</p>
+<p>You start somewhere. Anywhere.<br>
+Then you ask: <em>Can I improve this a little?</em></p>
+<p>You do not map the entire universe of possibilities. You do not build a full decision tree. You just look around.</p>
+<p>Imagine adjusting your chair while studying. You lean back slightly. Better. You adjust the height. Worse. You undo that change. This is local search.</p>
+<p>Formally:</p>
+<ul>
+<li>A <strong>state</strong> represents one complete solution.</li>
+<li>A <strong>neighbor</strong> is a solution obtained by a small modification.</li>
+<li>The algorithm remembers only the current state.</li>
+</ul>
+<p>This is powerful because it saves memory and computation. It is dangerous because it limits perspective.</p>
+<br>
+<h1 id="hill-climbing"id="hill-climbing"
+>Hill Climbing 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#hill-climbing&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Hill climbing is the most straightforward local search strategy.</p>
+<p>At every step, it does the same thing:</p>
+<ol>
+<li>Look at all neighboring states.</li>
+<li>Pick the one that improves the situation the most.</li>
+<li>Move there.</li>
+<li>Repeat.</li>
+</ol>
+<p>There is no planning. No backtracking. No regret.</p>
+<p>This is why hill climbing feels intuitive. It mirrors how we make many decisions in real life.</p>
+<p>If you are looking for better Wi-Fi signal in your house, you move your phone slightly. If the signal improves, you stay. If it worsens, you move back.</p>
+<p>Hill climbing works beautifully when the landscape is simple. Unfortunately, most real problems are not.</p>
+<br>
+<h1 id="local-minima-plateaus-and-ridges"id="local-minima-plateaus-and-ridges"
+>Local Minima, Plateaus, and Ridges 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#local-minima-plateaus-and-ridges&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Hill climbing fails not because it is stupid, but because it is <strong>too confident</strong>.</p>
+<h3 id="local-minima"id="local-minima"
+>Local Minima 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#local-minima&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>A local minimum is a solution that looks optimal from nearby positions but is far from globally optimal.</p>
+<p>Imagine choosing the first decent internship offer you receive. Locally, nothing looks better. Globally, waiting might have produced a stronger option.</p>
+<p>Hill climbing stops here and declares victory.</p>
+<h3 id="plateaus"id="plateaus"
+>Plateaus 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#plateaus&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>A plateau is a flat region where all nearby states look equally good.</p>
+<p>This is like scrolling endlessly through similar YouTube videos. Nothing feels worse. Nothing feels better. The algorithm does not know what to do next.</p>
+<p>Without additional logic, hill climbing stalls.</p>
+<h3 id="ridges"id="ridges"
+>Ridges 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#ridges&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h3><p>Ridges are even trickier. Improvement exists, but only if you temporarily move sideways or even slightly downhill.</p>
+<p>This is common in learning. Sometimes understanding gets worse before it gets better. Hill climbing refuses to take that risk.</p>
+<br>
+<h1 id="random-restart"id="random-restart"
+>Random Restart 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#random-restart&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Random-restart hill climbing is a pragmatic admission: <strong>we may have started badly</strong>.</p>
+<p>Instead of trusting one run, the algorithm:</p>
+<ul>
+<li>Starts at a random state.</li>
+<li>Climbs until stuck.</li>
+<li>Starts again elsewhere.</li>
+<li>Repeats many times.</li>
+</ul>
+<p>Each run explores a different region of the search space.</p>
+<p>This is similar to rewriting an essay from scratch instead of endlessly editing a bad first draft. Sometimes restarting is more efficient than repairing.</p>
+<p>Given enough restarts, the probability of finding a global optimum increases sharply.</p>
+<br>
+<h1 id="simulated-annealing"id="simulated-annealing"
+>Simulated Annealing 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#simulated-annealing&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Simulated annealing adds one crucial idea: <strong>controlled randomness</strong>.</p>
+<p>Early in the process, the algorithm allows itself to make worse moves. This feels counterintuitive, but it is essential.</p>
+<p>Why? Because sometimes the only way out of a bad situation is to temporarily accept something worse.</p>
+<p>Think of switching careers. The short-term salary drop may be real. The long-term improvement may be worth it.</p>
+<p>As time progresses, simulated annealing becomes more conservative. The willingness to accept worse solutions decreases. Eventually, the algorithm behaves like hill climbing.</p>
+<p>This balance between exploration and exploitation is one of the most important ideas in optimization.</p>
+<br>
+<h1 id="linear-programming"id="linear-programming"
+>Linear Programming 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#linear-programming&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Some optimization problems have a special structure: everything can be expressed linearly.</p>
+<p>In linear programming:</p>
+<ul>
+<li>Variables represent decisions.</li>
+<li>Constraints restrict those decisions.</li>
+<li>The objective function is linear.</li>
+</ul>
+<p>For example:</p>
+<ul>
+<li>How many units of each product should a factory make?</li>
+<li>How should time be allocated across tasks?</li>
+<li>How can costs be minimized while meeting requirements?</li>
+</ul>
+<p>These problems are mathematically elegant and often solvable optimally at scale. When a problem fits this form, linear programming is incredibly powerful.</p>
+<br>
+<h1 id="constraint-satisfaction-problems"id="constraint-satisfaction-problems"
+>Constraint Satisfaction Problems 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#constraint-satisfaction-problems&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Constraint satisfaction problems (CSPs) are slightly different.</p>
+<p>Here, we are not optimizing a numeric score. We are simply looking for <em>any solution that satisfies all constraints</em>.</p>
+<p>Sudoku is the classic example. You do not care which valid solution you find. You just need one.</p>
+<p>Each CSP has:</p>
+<ul>
+<li>Variables</li>
+<li>Domains</li>
+<li>Constraints</li>
+</ul>
+<p>The difficulty lies in managing interactions between constraints. A choice that works locally may cause failure later.</p>
+<p>AI solves CSPs by careful ordering, backtracking, and pruning — rejecting impossible paths early before they consume resources.</p>
+<br>
+<h1 id="ending-note"id="ending-note"
+>Ending Note 
+<button 
+    type="button" 
+    class="anchor" 
+    data-title="Copy link to clipboard" 
+    aria-label="Copy link to clipboard"
+    onclick="navigator.clipboard.writeText(&#34;http://localhost:1313/neuromech/cs50ai-3/#ending-note&#34;);this.insertAdjacentHTML('afterend', '<div class=link-copied>Link copied</div>');setTimeout(() => { document.querySelectorAll('.link-copied').forEach(el => el.remove()); }, 3000);"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 96 960 960" width="1em">
+        <path d="M450 776H280q-83 0-141.5-58.5T80 576q0-83 58.5-141.5T280 376h170v60H280q-58.333 0-99.167 40.765-40.833 40.764-40.833 99Q140 634 180.833 675q40.834 41 99.167 41h170v60ZM325 606v-60h310v60H325Zm185 170v-60h170q58.333 0 99.167-40.765 40.833-40.764 40.833-99Q820 518 779.167 477 738.333 436 680 436H510v-60h170q83 0 141.5 58.5T880 576q0 83-58.5 141.5T680 776H510Z"/>
+    </svg>
+</button>
+</h1><hr>
+<p>Lecture 3 shifts our understanding of intelligence.</p>
+<p>AI is not always about finding <em>the</em> correct answer.<br>
+Often, it is about finding a <strong>good answer efficiently</strong>, under limited time and resources.</p>
+<p>Optimization captures this idea beautifully.</p>
+<p>This post is part of my ongoing deep dive into <strong>CS50’s Introduction to Artificial Intelligence with Python</strong>, where I’m documenting my learnings, insights, and interpretations in a practical, simplified form.</p>
+<p>If you’re also exploring AI — whether as a student, researcher, or just a curious mind — I’d love to connect and exchange ideas.</p>
+<p>📬 Let’s connect on LinkedIn: <a href="https://www.linkedin.com/in/soham-gupta-b567b2274/">linkedin</a></p>
+<p>More coming soon from future weeks of CS50AI. Stay tuned — and stay curious.
+— <em>Soham Gupta</em></p>
+<blockquote>
+<p>This post is based on <em><strong><a href="https://cs50.harvard.edu/ai/2024/">CS50’s Introduction to Artificial Intelligence with Python</a></strong></em> — an open course by Harvard University taught by <strong><a href="https://cs.harvard.edu/malan/">David J. Malan</a></strong> and <strong><a href="https://pll.harvard.edu/instructor/brian-yu/">Brian Yu</a></strong>.</p>
+<p>You can explore the course materials <strong><a href="https://github.com/cs50">here on GitHub</a></strong>.</p></blockquote>
+
+        </div>
+    </div>
+</div>
+
+
+        </div><div class="container">
+    <div class="row justify-content-between">
+        <div class="col-sm-4">
+            <p class="footer">Soham Gupta © 2025 </p>
+        </div>
+        <div class="col-sm-6 d-flex flex-row-reverse">
+            
+            <a class="footer-social px-2"  href="https://github.com/fuel000cynical" target="_blank"><i class="fab fa-github"></i></a>
+            
+            <a class="footer-social px-2"  href="https://www.linkedin.com/in/soham-gupta-b567b2274/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            
+        </div>
+    </div>
+</div>
+<script src='http://localhost:1313/js/bootstrap.min.js'></script>
+<script type="text/javascript" src='http://localhost:1313/js/jquery.min.js'></script>
+<script src='http://localhost:1313/js/isotope.pkgd.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+<script src='http://localhost:1313/js/dark.js'></script>
+<script>
+
+
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light" 
+setTheme(savedTheme);
+
+</script>
+<script src='http://localhost:1313/js/isotope.js'></script>
+<script src='http://localhost:1313/js/mermaid.min.js'></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'});</script>
+</body>
+</html>

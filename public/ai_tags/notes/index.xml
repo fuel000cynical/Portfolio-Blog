@@ -7,21 +7,49 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
-    <lastBuildDate>Mon, 24 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/ai_tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimization</title>
+      <link>http://localhost:1313/neuromech/cs50ai-6/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/neuromech/cs50ai-6/</guid>
+      <description>Deriving Results from Probabilities  - Notes on CS50AI Lecture 2</description>
+    </item>
+    <item>
+      <title>Optimization</title>
+      <link>http://localhost:1313/neuromech/cs50ai-5/</link>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/neuromech/cs50ai-5/</guid>
+      <description>Deriving Results from Probabilities  - Notes on CS50AI Lecture 2</description>
+    </item>
+    <item>
+      <title>Optimization</title>
+      <link>http://localhost:1313/neuromech/cs50ai-4/</link>
+      <pubDate>Sun, 14 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/neuromech/cs50ai-4/</guid>
+      <description>Deriving Results from Probabilities  - Notes on CS50AI Lecture 2</description>
+    </item>
+    <item>
+      <title>Optimization</title>
+      <link>http://localhost:1313/neuromech/cs50ai-3/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/neuromech/cs50ai-3/</guid>
+      <description>Deriving Results from Probabilities  - Notes on CS50AI Lecture 2</description>
+    </item>
+    <item>
+      <title>Uncertainity</title>
+      <link>http://localhost:1313/neuromech/cs50ai-2/</link>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/neuromech/cs50ai-2/</guid>
+      <description>Deriving Results from Probabilities  - Notes on CS50AI Lecture 2</description>
+    </item>
     <item>
       <title>Knowledge</title>
       <link>http://localhost:1313/neuromech/cs50ai-1/</link>
       <pubDate>Mon, 24 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/neuromech/cs50ai-1/</guid>
       <description>Inferring and Creating Logic  - Notes on CS50AI Lecture 1</description>
-    </item>
-    <item>
-      <title>Uncertainity</title>
-      <link>http://localhost:1313/neuromech/cs50ai-2/</link>
-      <pubDate>Mon, 24 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/neuromech/cs50ai-2/</guid>
-      <description>Deriving Results from Probabilities  - Notes on CS50AI Lecture 2</description>
     </item>
     <item>
       <title>Search</title>

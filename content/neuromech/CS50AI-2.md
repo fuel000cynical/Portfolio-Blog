@@ -3,7 +3,7 @@ title: "Uncertainity"
 date: 2025-12-01
 draft: false
 ai_tags: ["cs50", "ai", "notes"]
-summary: "Deriving Results from Probabilities  - Notes on CS50AI Lecture 2"
+summary: "Deriving Results from Probabilities - Notes on CS50AI Lecture 2"
 ---
 
 Have you ever thought how Artificial Intelligence ranks websites on a browser, how genetics of a child are predicted? Week 2 of CS50’s AI course dives right into this idea, teaching us how to draw inferences from events which are not certain to happen or not happen, but have a probability to them.
