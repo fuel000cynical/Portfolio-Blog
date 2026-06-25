@@ -4,6 +4,10 @@
 {{ end }}
 <div class='col {{ $.Scratch.Get "garden_tags_list" }}'>
     <div class="card top-highlight">
+        {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+        {{ if $img }}
+        <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" class="card-img-top p-3">
+        {{ end }}
         <div class="card-body">
             {{ if .Summary }} 
             <h4 class="card-title">{{ .Title }}</h4>

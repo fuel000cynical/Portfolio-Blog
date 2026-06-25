@@ -24,21 +24,29 @@ copyright = "Soham Gupta ©"
 
 [menu]
   [[menu.main]]
-    name = "NeuroMech"
-    url = "/neuromech/"
+    name = "Home"
+    url = "/"
     weight = 1
-  [[menu.main]]
-    name = "Juriscript"
-    url = "/juriscript/"
-    weight = 2
-  [[menu.main]]
-    name = "Tech Projects"
-    url = "/projects/"
-    weight = 3
   [[menu.main]]
     name = "About"
     url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Publications"
+    url = "/publications/"
+    weight = 3
+  [[menu.main]]
+    name = "NeuroMech"
+    url = "/neuromech/"
     weight = 4
+  [[menu.main]]
+    name = "Juriscript"
+    url = "/juriscript/"
+    weight = 5
+  [[menu.main]]
+    name = "Personal Blog"
+    url = "/art/"
+    weight = 6
 
 
 [taxonomies]

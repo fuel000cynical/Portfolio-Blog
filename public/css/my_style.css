@@ -1,1 +1,29 @@
 /* Custom styles go here */
+
+.home-masonry {
+    column-gap: 1.5rem;
+}
+
+.home-masonry .col {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    display: block;
+    width: 100%;
+}
+
+.home-masonry-1 { column-count: 1; }
+.home-masonry-2 { column-count: 2; }
+.home-masonry-3 { column-count: 3; }
+.home-masonry-4 { column-count: 4; }
+
+@media (max-width: 768px) {
+    .home-masonry-2, .home-masonry-4 { column-count: 1; }
+}
+
+p, li, .bio, .main-content, .serif {
+    text-align: justify;
+}
+
+.card p, .card-text, .card-title {
+    text-align: left;
+}

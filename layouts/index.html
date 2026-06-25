@@ -7,112 +7,140 @@
 </div>
 <div class="mb-5 py-4">
     <div class="container">
-        <h2 class="bio lh-base fs-1 serif">Passionate about the law, technology, and creative expression.</h2><a href="/about" role="button" class="btn btn-sm see-all">See more about me.</a>
+        <h2 class="bio lh-base fs-1 serif">Student at GNLU Gandhinagar researching how technological change reshapes legal institutions.</h2><a href="/about" role="button" class="btn btn-sm see-all">See more about me.</a>
 		{{ range .Site.Params.Social }}
             <a class="footer-social px-2" {{ with .rel }} rel="{{ . }}" {{ end }} href="{{ .link }}" target="_blank"><i class="{{ .icon }}"></i></a>
         {{ end }}
     </div>
 </div>
 <div class="container py-3">
+
+	<!-- Row 1: Publications (2 cols) | Juriscript (1 col) -->
 	<div class="row justify-content-between my-5">
-		<div class="col-lg-4">
-			{{ with .Site.GetPage "section" "NeuroMech" }}
-          	<div class="pb-4">
-              	<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          	</div>      
+		<div class="col-lg-8">
+			{{ with .Site.GetPage "section" "publications" }}
+			<div class="pb-4">
+				<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
+			</div>
 			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
 			{{ end }}
-			<div class="row row-cols-1 g-4 mb-5">
-				{{ range ( where site.RegularPages "Section" "neuromech" | first 3 ) }}
+			<div class="home-masonry home-masonry-2 mb-5">
+				{{ range ( where (where site.RegularPages "Section" "publications") ".Params.featured" true ) }}
 				{{ partial "home_garden.html" . }}
 				{{ end }}
-      		</div>
-			{{ with .Site.GetPage "section" "NeuroMech" }}
+			</div>
+			{{ with .Site.GetPage "section" "publications" }}
 			<div class="d-flex flex-row-reverse">
-        		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all articles</a>
-      		</div>
-      		{{ end }}
+				<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all</a>
+			</div>
+			{{ end }}
 		</div>
 		<div class="col-lg-4">
 			{{ with .Site.GetPage "section" "juriscript" }}
-          	<div class="pb-4">
-              	<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          	</div>      
+			<div class="pb-4">
+				<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
+			</div>
 			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
 			{{ end }}
-			<div class="row row-cols-1 g-4 mb-5">
+			<div class="home-masonry home-masonry-1 mb-5">
 				{{ range ( where site.RegularPages "Section" "juriscript" | first 3 ) }}
 				{{ partial "home_garden.html" . }}
 				{{ end }}
-      		</div>
+			</div>
 			{{ with .Site.GetPage "section" "juriscript" }}
 			<div class="d-flex flex-row-reverse">
-        		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all articles</a>
-      		</div>
-      		{{ end }}
-		</div>
-		<div class="col-lg-4">
-			{{ with .Site.GetPage "section" "art" }}
-          	<div class="pb-4">
-              	<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          	</div>      
-			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
+				<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all articles</a>
+			</div>
 			{{ end }}
-			<div class="row row-cols-1 g-4 mb-5">
-				{{ range ( where site.RegularPages "Section" "art" | first 3 ) }}
-				{{ partial "home_garden.html" . }}
-				{{ end }}
-      		</div>
-			{{ with .Site.GetPage "section" "art" }}
-			<div class="d-flex flex-row-reverse">
-        		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all articles</a>
-      		</div>
-      		{{ end }}
 		</div>
 	</div>
+
+	<!-- Row 2: NeuroMech (1 col) | Certificates (2 cols) -->
 	<div class="row justify-content-between my-5">
-		<!-- Garden / Blog -->
 		<div class="col-lg-4">
-			{{ with .Site.GetPage "section" "Acheivements" }}
-          	<div class="pb-4">
-              	<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          	</div>      
+			{{ with .Site.GetPage "section" "NeuroMech" }}
+			<div class="pb-4">
+				<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
+			</div>
 			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
 			{{ end }}
-			<div class="row row-cols-1 g-4 mb-5">
-				{{ range ( where site.RegularPages "Section" "Acheivements" | first 7 ) }}
+			<div class="home-masonry home-masonry-1 mb-5">
+				{{ range ( where site.RegularPages "Section" "neuromech" | first 3 ) }}
 				{{ partial "home_garden.html" . }}
 				{{ end }}
-      		</div>
-			{{ with .Site.GetPage "section" "Acheivements" }}
+			</div>
+			{{ with .Site.GetPage "section" "NeuroMech" }}
 			<div class="d-flex flex-row-reverse">
-        		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all</a>
-      		</div>
-      		{{ end }}
+				<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all articles</a>
+			</div>
+			{{ end }}
 		</div>
-    	
-		<!-- Projects -->
-		<div class="col-lg-7">
+		<div class="col-lg-8">
+			{{ with .Site.GetPage "section" "certificates" }}
+			<div class="pb-4">
+				<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
+			</div>
+			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
+			{{ end }}
+			<div class="home-masonry home-masonry-2 mb-5">
+				{{ range ( where (where site.RegularPages "Section" "certificates") ".Params.featured" true ) }}
+				{{ partial "home_garden.html" . }}
+				{{ end }}
+			</div>
+			{{ with .Site.GetPage "section" "certificates" }}
+			<div class="d-flex flex-row-reverse">
+				<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all certificates</a>
+			</div>
+			{{ end }}
+		</div>
+	</div>
+
+	<!-- Row 3: A Rough Thought (horizontal) -->
+	<div class="row my-5">
+		<div class="col-12">
+			{{ with .Site.GetPage "section" "art" }}
+			<div class="pb-4">
+				<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
+			</div>
+			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
+			{{ end }}
+			<div class="home-masonry home-masonry-4 mb-5">
+				{{ range ( where site.RegularPages "Section" "art" | first 4 ) }}
+				{{ partial "home_garden.html" . }}
+				{{ end }}
+			</div>
+			{{ with .Site.GetPage "section" "art" }}
+			<div class="d-flex flex-row-reverse">
+				<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all articles</a>
+			</div>
+			{{ end }}
+		</div>
+	</div>
+
+	<!-- Row 4: Tech Projects (horizontal) -->
+	<div class="row my-5">
+		<div class="col-12">
 			{{ with .Site.GetPage "section" "projects" }}
 			<div class="pb-4">
 				<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
-			</div>          
-			{{ if .Summary }} 
-			<p class="subheading">{{ .Summary }}</p> 
+			</div>
+			{{ if .Summary }}
+			<p class="subheading">{{ .Summary }}</p>
 			{{ end }}
 			{{ end }}
-			<div class="row row-cols-1 row-cols-md-2 g-4 mb-5" data-masonry='{"percentPosition": true }'>
+			<div class="home-masonry home-masonry-3 mb-5">
 				{{ range ( where site.RegularPages "Section" "projects" | first 4 ) }}
-				{{ partial "home_project.html" . }}
-				{{end}}
-    		</div>
+				{{ partial "home_garden.html" . }}
+				{{ end }}
+			</div>
 			{{ with .Site.GetPage "section" "projects" }}
 			<div class="d-flex flex-row-reverse">
 				<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">See all projects</a>
-			</div>    
+			</div>
 			{{ end }}
-  		</div>
+		</div>
 	</div>
-	</div>
+
+</div>
 </div>
 {{ end }}

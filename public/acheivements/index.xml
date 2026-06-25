@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications &amp; Certificates on SG</title>
+    <title>Publications on SG</title>
     <link>http://localhost:1313/acheivements/</link>
-    <description>Recent content in Publications &amp; Certificates on SG</description>
+    <description>Recent content in Publications on SG</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/acheivements/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>He Who Controls the Chips Controls the Future</title>
+      <link>http://localhost:1313/acheivements/he-who-controls-the-chips/</link>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/acheivements/he-who-controls-the-chips/</guid>
+      <description>The Case for Compute Governance, published by the NLIU Centre for Law and Technology.</description>
+    </item>
+    <item>
+      <title>Markets in Pieces</title>
+      <link>http://localhost:1313/acheivements/markets-in-pieces/</link>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/acheivements/markets-in-pieces/</guid>
+      <description>Arbitration, Competition Law, and the Quiet Erosion of Coherence, published by the Vidhi Centre for Legal Policy.</description>
+    </item>
+    <item>
+      <title>The Politics You Never Saw: Microtargeting and the Manufacture of Misinformed Voters</title>
+      <link>http://localhost:1313/acheivements/the-politics-you-never-saw/</link>
+      <pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/acheivements/the-politics-you-never-saw/</guid>
+      <description>Chapter 2 in Headlines vs. Law: When Media Narratives Clash with Legal Truth, published by Swami Vivekananda University Press.</description>
+    </item>
   </channel>
 </rss>

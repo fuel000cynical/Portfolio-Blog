@@ -1,0 +1,29 @@
+<div class="col-12">
+    <div class="card top-highlight">
+        <div class="row g-0">
+            {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+            {{ if $img }}
+            <div class="col-md-2 d-flex align-items-center justify-content-center p-2">
+                <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="img-fluid rounded">
+            </div>
+            <div class="col-md-10">
+            {{ else }}
+            <div class="col-12">
+            {{ end }}
+                <div class="card-body">
+                    <div class="row justify-content-between">
+                        <div class="col-9">
+                            <h5 class="card-title">{{ .Title }}</h5>
+                            <p class="card-text">{{ .Summary }}</p>
+                        </div>
+                        <div class="col-3 text-end">
+                            <span class="card-date">{{ .Lastmod.Format "Jan 2, 2006" }}</span>
+                            <br/>{{ partial "status.html" . }}
+                        </div>
+                    </div>
+                    <a href="{{ .RelPermalink }}" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

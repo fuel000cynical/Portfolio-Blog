@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hackathon on SG</title>
+    <link>http://localhost:1313/garden_tags/hackathon/</link>
+    <description>Recent content in Hackathon on SG</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Soham Gupta ©</copyright>
+    <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/garden_tags/hackathon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Best Educational Hack, KTByte Hackathon</title>
+      <link>http://localhost:1313/certificates/ktbyte-hackathon/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/certificates/ktbyte-hackathon/</guid>
+      <description>International award at the KTByte Hackathon (2025).</description>
+    </item>
+  </channel>
+</rss>

@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
-    <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CTRLTube</title>
@@ -22,6 +22,41 @@
       <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/crypt-it/</guid>
       <description>A website for the capture the flag event 2024 of Byte Club</description>
+    </item>
+    <item>
+      <title>He Who Controls the Chips Controls the Future</title>
+      <link>http://localhost:1313/publications/he-who-controls-the-chips/</link>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/he-who-controls-the-chips/</guid>
+      <description>The Case for Compute Governance, published by the NLIU Centre for Law and Technology.</description>
+    </item>
+    <item>
+      <title>Markets in Pieces</title>
+      <link>http://localhost:1313/publications/markets-in-pieces/</link>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/markets-in-pieces/</guid>
+      <description>Arbitration, Competition Law, and the Quiet Erosion of Coherence, published by the Vidhi Centre for Legal Policy.</description>
+    </item>
+    <item>
+      <title>1st Place, Essay Writing Competition on Arbitration and Policy</title>
+      <link>http://localhost:1313/certificates/kautilya-essay-competition/</link>
+      <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/certificates/kautilya-essay-competition/</guid>
+      <description>Kautilya Society, NLUO, 2025 — co-authored with Disha Joshi; subsequently published by Vidhi Centre for Legal Policy.</description>
+    </item>
+    <item>
+      <title>The Politics You Never Saw: Microtargeting and the Manufacture of Misinformed Voters</title>
+      <link>http://localhost:1313/publications/the-politics-you-never-saw/</link>
+      <pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/the-politics-you-never-saw/</guid>
+      <description>Chapter 2 in Headlines vs. Law: When Media Narratives Clash with Legal Truth, published by Swami Vivekananda University Press.</description>
+    </item>
+    <item>
+      <title>CS50AI, Harvard University</title>
+      <link>http://localhost:1313/certificates/cs50ai/</link>
+      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/certificates/cs50ai/</guid>
+      <description>Introduction to Artificial Intelligence with Python, Harvard University (2025).</description>
     </item>
     <item>
       <title>Language</title>
@@ -66,6 +101,13 @@
       <description>Inferring and Creating Logic  - Notes on CS50AI Lecture 1</description>
     </item>
     <item>
+      <title>Aditya Birla Scholarship, 2025 Shortlist</title>
+      <link>http://localhost:1313/certificates/aditya-birla-scholarship/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/certificates/aditya-birla-scholarship/</guid>
+      <description>Selected among the Top 30 Law Students in India.</description>
+    </item>
+    <item>
       <title>Search</title>
       <link>http://localhost:1313/neuromech/cs50ai-0/</link>
       <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
@@ -73,11 +115,25 @@
       <description>Making Systems Find Paths - Notes on CS50AI Lecture 0</description>
     </item>
     <item>
+      <title>Best Educational Hack, KTByte Hackathon</title>
+      <link>http://localhost:1313/certificates/ktbyte-hackathon/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/certificates/ktbyte-hackathon/</guid>
+      <description>International award at the KTByte Hackathon (2025).</description>
+    </item>
+    <item>
+      <title>Grade 2 Rock and Pop Guitar with Merit, Trinity College London</title>
+      <link>http://localhost:1313/certificates/trinity-guitar/</link>
+      <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/certificates/trinity-guitar/</guid>
+      <description>International certification awarded by Trinity College London (2024).</description>
+    </item>
+    <item>
       <title>Soham Gupta</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>Passionate about the law, technology, and creative expression.</description>
+      <description>Student at GNLU Gandhinagar researching how technological change reshapes legal institutions.</description>
     </item>
   </channel>
 </rss>

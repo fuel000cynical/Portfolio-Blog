@@ -1,0 +1,44 @@
+{{ define "main" }}
+
+<div class="container" style="max-width: 800px;">
+    <div class="py-4 rounded-3">
+        <div class="container-fluid py-2">
+            <h1 class="display-2 mb-4 text-center">{{ .Title }}</h1>
+        </div>
+        {{ with .Summary }}
+        <p class="text-center fs-4 fst-italic serif">{{ . }}</p>
+        {{ end }}
+    </div>
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-12">
+            <p class="card-date m-0">
+                {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+                {{ with .Date }}
+                    Created {{ .Format $dateFormat }}
+                {{ end }}
+            </p>
+            <hr class="dropdown-divider">
+            <div class="row justify-content-between">
+                <div class="col-sm-4">
+                    {{ partial "status.html" . }}
+                </div>
+                <div class="col-sm-8" style="text-align: right;">
+                    {{ with .Params.garden_tags }}
+                    {{ range . }}
+                    <span class="badge tag-badge">{{ . }}</span>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-2">
+        <div class="serif main-content">
+            {{ .Content | safeHTML }}
+        </div>
+    </div>
+</div>
+
+{{ end }}
