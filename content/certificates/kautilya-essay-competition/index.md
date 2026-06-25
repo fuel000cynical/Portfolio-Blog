@@ -9,7 +9,7 @@ draft: false
 featured: true
 ---
 
-<img src="featured.jpeg" alt="Kautilya Society Essay Competition" style="max-width: 100%; height: auto; display: block; margin: 0 auto 2rem auto;" />
+<img src="featured.png" alt="Kautilya Society Essay Competition" style="max-width: 100%; height: auto; display: block; margin: 0 auto 2rem auto;" />
 
 First place at the Essay Writing Competition on 'Arbitration and Policy' organised by the Kautilya Society, NLUO (2025). The essay was co-authored with Disha Joshi and was subsequently selected for publication by the Vidhi Centre for Legal Policy as "Markets in Pieces: Arbitration, Competition Law, and the Quiet Erosion of Coherence."
 

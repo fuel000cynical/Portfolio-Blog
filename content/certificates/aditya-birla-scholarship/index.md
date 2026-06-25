@@ -9,7 +9,7 @@ draft: false
 featured: true
 ---
 
-<img src="featured.jpeg" alt="Aditya Birla Scholarship" style="max-width: 100%; height: auto; display: block; margin: 0 auto 2rem auto;" />
+<img src="featured.png" alt="Aditya Birla Scholarship" style="max-width: 100%; height: auto; display: block; margin: 0 auto 2rem auto;" />
 
 The Aditya Birla Scholarship Programme recognises the thirty most outstanding law students across India's premier law universities. Selection happens in two stages: the first filters candidates to the top twenty CLAT rankers within each university, and the second shortlists five students from that group based on essays and CV submissions. The Certificate of Merit is awarded to those who clear both stages.
 
