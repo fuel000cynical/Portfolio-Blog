@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ai_tags on SG</title>
-    <link>http://localhost:1313/ai_tags/</link>
+    <link>https://www.guptasoham.com/ai_tags/</link>
     <description>Recent content in Ai_tags on SG</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
     <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/ai_tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.guptasoham.com/ai_tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ai</title>
-      <link>http://localhost:1313/ai_tags/ai/</link>
+      <link>https://www.guptasoham.com/ai_tags/ai/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ai_tags/ai/</guid>
+      <guid>https://www.guptasoham.com/ai_tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Cs50</title>
-      <link>http://localhost:1313/ai_tags/cs50/</link>
+      <link>https://www.guptasoham.com/ai_tags/cs50/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ai_tags/cs50/</guid>
+      <guid>https://www.guptasoham.com/ai_tags/cs50/</guid>
       <description></description>
     </item>
     <item>
       <title>Notes</title>
-      <link>http://localhost:1313/ai_tags/notes/</link>
+      <link>https://www.guptasoham.com/ai_tags/notes/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ai_tags/notes/</guid>
+      <guid>https://www.guptasoham.com/ai_tags/notes/</guid>
       <description></description>
     </item>
   </channel>

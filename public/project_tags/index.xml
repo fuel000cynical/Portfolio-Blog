@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Project_tags on SG</title>
-    <link>http://localhost:1313/project_tags/</link>
+    <link>https://www.guptasoham.com/project_tags/</link>
     <description>Recent content in Project_tags on SG</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
     <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/project_tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.guptasoham.com/project_tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ai</title>
-      <link>http://localhost:1313/project_tags/ai/</link>
+      <link>https://www.guptasoham.com/project_tags/ai/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/ai/</guid>
+      <guid>https://www.guptasoham.com/project_tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Extension</title>
-      <link>http://localhost:1313/project_tags/extension/</link>
+      <link>https://www.guptasoham.com/project_tags/extension/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/extension/</guid>
+      <guid>https://www.guptasoham.com/project_tags/extension/</guid>
       <description></description>
     </item>
     <item>
       <title>Mongodb</title>
-      <link>http://localhost:1313/project_tags/mongodb/</link>
+      <link>https://www.guptasoham.com/project_tags/mongodb/</link>
       <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/mongodb/</guid>
+      <guid>https://www.guptasoham.com/project_tags/mongodb/</guid>
       <description></description>
     </item>
     <item>
       <title>Nodejs</title>
-      <link>http://localhost:1313/project_tags/nodejs/</link>
+      <link>https://www.guptasoham.com/project_tags/nodejs/</link>
       <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/nodejs/</guid>
+      <guid>https://www.guptasoham.com/project_tags/nodejs/</guid>
       <description></description>
     </item>
     <item>
       <title>Webapp</title>
-      <link>http://localhost:1313/project_tags/webapp/</link>
+      <link>https://www.guptasoham.com/project_tags/webapp/</link>
       <pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project_tags/webapp/</guid>
+      <guid>https://www.guptasoham.com/project_tags/webapp/</guid>
       <description></description>
     </item>
   </channel>

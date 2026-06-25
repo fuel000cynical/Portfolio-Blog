@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on SG</title>
-    <link>http://localhost:1313/garden_tags/blog/</link>
+    <link>https://www.guptasoham.com/garden_tags/blog/</link>
     <description>Recent content in Blog on SG</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
     <lastBuildDate>Sun, 26 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/garden_tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.guptasoham.com/garden_tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>He Who Controls the Chips Controls the Future</title>
-      <link>http://localhost:1313/publications/he-who-controls-the-chips/</link>
+      <link>https://www.guptasoham.com/publications/he-who-controls-the-chips/</link>
       <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publications/he-who-controls-the-chips/</guid>
+      <guid>https://www.guptasoham.com/publications/he-who-controls-the-chips/</guid>
       <description>The Case for Compute Governance, published by the NLIU Centre for Law and Technology.</description>
     </item>
     <item>
       <title>Markets in Pieces</title>
-      <link>http://localhost:1313/publications/markets-in-pieces/</link>
+      <link>https://www.guptasoham.com/publications/markets-in-pieces/</link>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publications/markets-in-pieces/</guid>
+      <guid>https://www.guptasoham.com/publications/markets-in-pieces/</guid>
       <description>Arbitration, Competition Law, and the Quiet Erosion of Coherence, published by the Vidhi Centre for Legal Policy.</description>
     </item>
   </channel>

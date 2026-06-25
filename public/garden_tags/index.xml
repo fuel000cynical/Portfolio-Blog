@@ -2,81 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Garden_tags on SG</title>
-    <link>http://localhost:1313/garden_tags/</link>
+    <link>https://www.guptasoham.com/garden_tags/</link>
     <description>Recent content in Garden_tags on SG</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
     <lastBuildDate>Sun, 26 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/garden_tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.guptasoham.com/garden_tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog</title>
-      <link>http://localhost:1313/garden_tags/blog/</link>
+      <link>https://www.guptasoham.com/garden_tags/blog/</link>
       <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/garden_tags/blog/</guid>
+      <guid>https://www.guptasoham.com/garden_tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Publication</title>
-      <link>http://localhost:1313/garden_tags/publication/</link>
+      <link>https://www.guptasoham.com/garden_tags/publication/</link>
       <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/garden_tags/publication/</guid>
+      <guid>https://www.guptasoham.com/garden_tags/publication/</guid>
       <description></description>
     </item>
     <item>
       <title>Award</title>
-      <link>http://localhost:1313/garden_tags/award/</link>
+      <link>https://www.guptasoham.com/garden_tags/award/</link>
       <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/garden_tags/award/</guid>
+      <guid>https://www.guptasoham.com/garden_tags/award/</guid>
       <description></description>
     </item>
     <item>
       <title>Competition</title>
-      <link>http://localhost:1313/garden_tags/competition/</link>
+      <link>https://www.guptasoham.com/garden_tags/competition/</link>
       <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/garden_tags/competition/</guid>
+      <guid>https://www.guptasoham.com/garden_tags/competition/</guid>
       <description></description>
     </item>
     <item>
       <title>Book-Chapter</title>
-      <link>http://localhost:1313/garden_tags/book-chapter/</link>
+      <link>https://www.guptasoham.com/garden_tags/book-chapter/</link>
       <pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/garden_tags/book-chapter/</guid>
+      <guid>https://www.guptasoham.com/garden_tags/book-chapter/</guid>
       <description></description>
     </item>
     <item>
       <title>Certificate</title>
-      <link>http://localhost:1313/garden_tags/certificate/</link>
+      <link>https://www.guptasoham.com/garden_tags/certificate/</link>
       <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/garden_tags/certificate/</guid>
+      <guid>https://www.guptasoham.com/garden_tags/certificate/</guid>
       <description></description>
     </item>
     <item>
       <title>Cs</title>
-      <link>http://localhost:1313/garden_tags/cs/</link>
+      <link>https://www.guptasoham.com/garden_tags/cs/</link>
       <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/garden_tags/cs/</guid>
+      <guid>https://www.guptasoham.com/garden_tags/cs/</guid>
       <description></description>
     </item>
     <item>
       <title>Scholarship</title>
-      <link>http://localhost:1313/garden_tags/scholarship/</link>
+      <link>https://www.guptasoham.com/garden_tags/scholarship/</link>
       <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/garden_tags/scholarship/</guid>
+      <guid>https://www.guptasoham.com/garden_tags/scholarship/</guid>
       <description></description>
     </item>
     <item>
       <title>Hackathon</title>
-      <link>http://localhost:1313/garden_tags/hackathon/</link>
+      <link>https://www.guptasoham.com/garden_tags/hackathon/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/garden_tags/hackathon/</guid>
+      <guid>https://www.guptasoham.com/garden_tags/hackathon/</guid>
       <description></description>
     </item>
     <item>
       <title>Music</title>
-      <link>http://localhost:1313/garden_tags/music/</link>
+      <link>https://www.guptasoham.com/garden_tags/music/</link>
       <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/garden_tags/music/</guid>
+      <guid>https://www.guptasoham.com/garden_tags/music/</guid>
       <description></description>
     </item>
   </channel>

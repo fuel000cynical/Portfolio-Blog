@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Award on SG</title>
-    <link>http://localhost:1313/garden_tags/award/</link>
+    <link>https://www.guptasoham.com/garden_tags/award/</link>
     <description>Recent content in Award on SG</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
     <lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/garden_tags/award/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.guptasoham.com/garden_tags/award/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1st Place, Essay Writing Competition on Arbitration and Policy</title>
-      <link>http://localhost:1313/certificates/kautilya-essay-competition/</link>
+      <link>https://www.guptasoham.com/certificates/kautilya-essay-competition/</link>
       <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/certificates/kautilya-essay-competition/</guid>
+      <guid>https://www.guptasoham.com/certificates/kautilya-essay-competition/</guid>
       <description>Kautilya Society, NLUO, 2025 — co-authored with Disha Joshi; subsequently published by Vidhi Centre for Legal Policy.</description>
     </item>
     <item>
       <title>Aditya Birla Scholarship, 2025 Shortlist</title>
-      <link>http://localhost:1313/certificates/aditya-birla-scholarship/</link>
+      <link>https://www.guptasoham.com/certificates/aditya-birla-scholarship/</link>
       <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/certificates/aditya-birla-scholarship/</guid>
+      <guid>https://www.guptasoham.com/certificates/aditya-birla-scholarship/</guid>
       <description>Selected among the Top 30 Law Students in India.</description>
     </item>
     <item>
       <title>Best Educational Hack, KTByte Hackathon</title>
-      <link>http://localhost:1313/certificates/ktbyte-hackathon/</link>
+      <link>https://www.guptasoham.com/certificates/ktbyte-hackathon/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/certificates/ktbyte-hackathon/</guid>
+      <guid>https://www.guptasoham.com/certificates/ktbyte-hackathon/</guid>
       <description>International award at the KTByte Hackathon (2025).</description>
     </item>
   </channel>
