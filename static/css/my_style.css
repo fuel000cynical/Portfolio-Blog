@@ -11,13 +11,21 @@
     width: 100%;
 }
 
+@media (orientation: landscape) {
+    .home-masonry { column-count: 1; }
+    .col-lg-4 .home-masonry,
+    .col-lg-8 .home-masonry-2 { column-count: 1; }
+    .home-masonry-3 { column-count: 3; }
+    .col-lg-8 .home-masonry { column-count: 2; }
+}
+
 .home-masonry-1 { column-count: 1; }
 .home-masonry-2 { column-count: 2; }
 .home-masonry-3 { column-count: 3; }
 .home-masonry-4 { column-count: 4; }
 
 @media (max-width: 768px) {
-    .home-masonry-2, .home-masonry-4 { column-count: 1; }
+    .home-masonry, .home-masonry-2, .home-masonry-3, .home-masonry-4 { column-count: 1; }
 }
 
 p, li, .bio, .main-content, .serif {

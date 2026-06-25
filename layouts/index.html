@@ -104,7 +104,7 @@
 			</div>
 			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
 			{{ end }}
-			<div class="home-masonry home-masonry-4 mb-5">
+			<div class="home-masonry home-masonry-3 mb-5">
 				{{ range ( where site.RegularPages "Section" "art" | first 4 ) }}
 				{{ partial "home_garden.html" . }}
 				{{ end }}
