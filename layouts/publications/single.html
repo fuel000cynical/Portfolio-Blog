@@ -3,10 +3,13 @@
 <div class="container" style="max-width: 800px;">
     <div class="py-4 rounded-3">
         <div class="container-fluid py-2">
-            <h1 class="display-2 mb-4 text-center">{{ .Title }}</h1>
+            <h1 class="display-2 mb-2 text-center">{{ .Title }}</h1>
+            {{ with .Params.subtitle }}
+            <p class="text-center fs-4 serif mb-4">{{ . }}</p>
+            {{ end }}
         </div>
         {{ with .Summary }}
-        <p class="text-center fs-4 fst-italic serif">{{ . }}</p>
+        <p class="text-center fs-5 fst-italic serif">{{ . }}</p>
         {{ end }}
     </div>
 

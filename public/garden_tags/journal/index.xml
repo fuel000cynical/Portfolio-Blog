@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Journal on SG</title>
+    <link>http://localhost:1313/garden_tags/journal/</link>
+    <description>Recent content in Journal on SG</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Soham Gupta ©</copyright>
+    <lastBuildDate>Wed, 01 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/garden_tags/journal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Stillborn Law: Federalism, Medium Arbitrariness, and Legislative Abdication in India&#39;s Online Gaming Act, 2025</title>
+      <link>http://localhost:1313/publications/a-stillborn-law/</link>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/a-stillborn-law/</guid>
+      <description>Published in the Comparative Constitutional Law and Administrative Law Journal, Vol. X Issue I (2026), NLU Jodhpur.</description>
+    </item>
+  </channel>
+</rss>
