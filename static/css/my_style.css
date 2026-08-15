@@ -28,6 +28,14 @@
     .home-masonry, .home-masonry-2, .home-masonry-3, .home-masonry-4 { column-count: 1; }
 }
 
+#blogposts {
+    position: relative;
+}
+
+#blogposts .col {
+    position: relative;
+}
+
 p, li, .bio, .main-content, .serif {
     text-align: justify;
 }

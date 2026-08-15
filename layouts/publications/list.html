@@ -17,10 +17,16 @@
     <div class="btn-toolbar mb-2 bio" role="toolbar" aria-label="Toolbar with button groups">
         <i class="fas fa-filter"></i>
         <div id="filters" class="button-group">
-            {{ range $name, $taxonomy := .Site.Taxonomies.garden_tags }}
-            {{ $btnid := $name | printf ".js-iso-%s"}}
+            {{ $tags := slice }}
+            {{ range .Pages }}
+                {{ range .Params.garden_tags }}
+                    {{ $tags = $tags | append . }}
+                {{ end }}
+            {{ end }}
+            {{ range ($tags | uniq) }}
+            {{ $btnid := . | printf ".js-iso-%s"}}
             <input type="checkbox" class="btn-check" id="{{ $btnid }}" autocomplete="off" data-filter="{{ $btnid }}">
-            <label class="button" for="{{ $btnid }}">{{ $name }}</label>  
+            <label class="button" for="{{ $btnid }}">{{ . }}</label>
             {{ end }}
         </div>
     </div>

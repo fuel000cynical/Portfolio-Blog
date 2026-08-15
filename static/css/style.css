@@ -259,14 +259,22 @@ code {
   background-color: var(--lighter-blue);
   color: var(--dark);
 }
-.button-group:after {
-  content: '';
-  display: block;
-  /* clear: both; */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
 }
 .button-group .button {
-  float: left;
+  float: none;
   border-radius: 5px;
+}
+.button-group input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 
 /* ---- Title ---- */

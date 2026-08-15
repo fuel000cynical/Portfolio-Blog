@@ -2,7 +2,11 @@
 // https://codepen.io/desandro/pen/JGKyrY
 //
 var $blogposts = $('#blogposts');
-$blogposts.isotope({itemSelector : '.col'});
+$blogposts.css('visibility', 'hidden');
+$(window).on('load', function() {
+    $blogposts.isotope({itemSelector : '.col'});
+    $blogposts.css('visibility', 'visible');
+});
 var $checkboxes = $('#filters input');
 
 $checkboxes.change( function() {

@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Soham Gupta ©</copyright>
-    <lastBuildDate>Sun, 26 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/garden_tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Political Economy of GPUs</title>
+      <link>http://localhost:1313/publications/political-economy-of-gpus/</link>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/political-economy-of-gpus/</guid>
+      <description>Published by the NLIU Centre for Law and Technology. A competition-law analysis of structural cartelisation in the AI compute market.</description>
+    </item>
     <item>
       <title>He Who Controls the Chips Controls the Future</title>
       <link>http://localhost:1313/publications/he-who-controls-the-chips/</link>
